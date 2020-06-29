@@ -12,10 +12,10 @@ def autologin():
     token_path = "api_key.txt"
     key_secret = open(token_path,'r').read().split()
     kite = KiteConnect(api_key=key_secret[0])
-    service = webdriver.chrome.service.Service('./chromedriver')
+    service = webdriver.chrome .service.Service('C:/Program Files/Python38/chromedriver')
     service.start()
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     options = options.to_capabilities()
     driver = webdriver.Remote(service.service_url, options)
     driver.get(kite.login_url())
